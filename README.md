@@ -1,4 +1,4 @@
-# WS11-GMeet-Helper
+# [WS11-GMeet-Helper](https://robo-mop.github.io/WS11-GMeet-Helper/)
 
 Automatically opens the current ongoing class or the next class if it is in 5 minutes.
 
