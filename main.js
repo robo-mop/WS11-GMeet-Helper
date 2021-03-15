@@ -1,4 +1,3 @@
-
 // 0 8-9
 // 1 9-10
 // 2 10-11
@@ -137,8 +136,7 @@ function run()
             found_current = true;
             if(minute <= 15 && window.localStorage.getItem("OPENED") != link)
             {
-                print(name);
-                // window.location.replace(link);
+                window.location.replace(link);
                 window.localStorage.setItem("OPENED", link);
             }
             break;
@@ -166,8 +164,7 @@ function run()
             
             if(minute >= 58 && window.localStorage.getItem("OPENED") != link)
             {
-                print(name);
-                // window.location.replace(link);
+                window.location.replace(link);
                 window.localStorage.setItem("OPENED", link);
             }
             break;
