@@ -124,11 +124,12 @@ function run()
     // Print Current Meet
     
     let found_current = false;
-    for(let [time, [link, name]] of Object.entries(links))
+    for(let [time, link] of Object.entries(links))
     {
         // [link, name] = link;
         if(time == hour && link!="")
         {
+            [link, name] = link
             ongoing_class.innerHTML = "<span>"+name+"</span><span>"+link.replace("https://", '')+"</span>";
             // ongoing_class.innerHTML = link.replace("https://", '');
             ongoing_class.setAttribute("href", link);
@@ -152,10 +153,11 @@ function run()
     // Print NEXT Meet
     
     let found_next = false;
-    for(let [time, [link, name]] of Object.entries(links))
+    for(let [time, link] of Object.entries(links))
     {
         if(time > hour && link != "")
         {
+            [link, name] = link;
             print(link);
             next_class.innerHTML = "<span>"+name+"</span><span>"+link.replace("https://", '')+"</span>";
             next_class.setAttribute("href", link);
