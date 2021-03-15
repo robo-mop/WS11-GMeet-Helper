@@ -12,90 +12,84 @@
 // 10 6-7
 
 meets = [
-    // Monday
     {
-        0:'https://meet.google.com/sky-zjog-dca',
-        1:'',
-        2:'https://meet.google.com/edx-jgfu-hrf',
-        3:'https://meet.google.com/ffk-fdkz-kpk',
-        4:'https://meet.google.com/kcb-wzkz-kav',
-        5:'',
-        6:'',
-        7:'',
-        8:'https://meet.google.com/pnb-guub-irc',
-        9:'',
-        10:'',
+        0: ['https://meet.google.com/sky-zjog-dca', 'MATHEMATICS-II'],
+        1: ['https://meet.google.com/czm-jnjh-xyg', 'MECH OSCIL & WAVES'],
+        2: ['https://meet.google.com/edx-jgfu-hrf', 'MATHEMATICS-II'],
+        3: ['https://meet.google.com/ffk-fdkz-kpk', 'COMPUTER PROGRAMMING'],
+        4: ['https://meet.google.com/kcb-wzkz-kav', 'ELECTRICAL SCIENCES'],
+        5: '',
+        6: '',
+        7: '',
+        8: ['https://meet.google.com/pnb-guub-irc', 'THERMODYNAMICS'],
+        9: ['https://meet.google.com/fhb-dusx-coi', 'MECH OSCIL & WAVES'],
+        10: ''
     },
-    // Tuesday
     {
-        0:'',
-        1:'',
-        2:'',
-        3:'',
-        4:'',
-        5:'',
-        6:'',
-        7:'',
-        8:'https://meet.google.com/znr-ursi-tyu',
-        9:'',
-        10:'',
+        0: '',
+        1: '',
+        2: '',
+        3: '',
+        4: '',
+        5: '',
+        6: '',
+        7: '',
+        8: ['https://meet.google.com/znr-ursi-tyu', 'TECH REPORT WRITING'],
+        9: ['', 'COMPUTER PROGRAMMING'],
+        10: ''
     },
-    // Wednesday
     {
-        0:'',
-        1:'',
-        2:'https://meet.google.com/edx-jgfu-hrf',
-        3:'https://meet.google.com/ffk-fdkz-kpk',
-        4:'https://meet.google.com/kcb-wzkz-kav',
-        5:'',
-        6:'',
-        7:'',
-        8:'https://meet.google.com/pnb-guub-irc',
-        9:'https://meet.google.com/mhb-aoxv-dor',
-        10:'',
+        0: '',
+        1: ['https://meet.google.com/osc-dbqh-zjt', 'MECH OSCIL & WAVES'],
+        2: ['https://meet.google.com/edx-jgfu-hrf', 'MATHEMATICS-II'],
+        3: ['https://meet.google.com/ffk-fdkz-kpk', 'COMPUTER PROGRAMMING'],
+        4: ['https://meet.google.com/kcb-wzkz-kav', 'ELECTRICAL SCIENCES'],
+        5: '',
+        6: '',
+        7: '',
+        8: ['https://meet.google.com/pnb-guub-irc', 'THERMODYNAMICS'],
+        9: ['https://meet.google.com/mhb-aoxv-dor', 'ELECTRICAL SCIENCES'],
+        10: ''
     },
-    // Thursday
     {
-        0:'',
-        1:'',
-        2:'https://meet.google.com/xwj-rsyk-ibc',
-        3:'',
-        4:'',
-        5:'',
-        6:'',
-        7:'',
-        8:'https://meet.google.com/znr-ursi-tyu',
-        9:'https://meet.google.com/vky-rsgf-wno',
-        10:'',
+        0: '',
+        1: '',
+        2: ['https://meet.google.com/xwj-rsyk-ibc', 'WORKSHOP PRACTICE'],
+        3: '',
+        4: '',
+        5: '',
+        6: '',
+        7: '',
+        8: ['https://meet.google.com/znr-ursi-tyu', 'TECH REPORT WRITING'],
+        9: ['https://meet.google.com/vky-rsgf-wno', 'THERMODYNAMICS'],
+        10: ''
     },
-    // Friday
     {
-        0:'',
-        1:'https://meet.google.com/fhb-dusx-coi',
-        2:'https://meet.google.com/edx-jgfu-hrf',
-        3:'https://meet.google.com/ffk-fdkz-kpk',
-        4:'https://meet.google.com/kcb-wzkz-kav',
-        5:'',
-        6:'https://meet.google.com/noi-yaez-seb',
-        7:'',
-        8:'https://meet.google.com/xxm-pypr-pcq',
-        9:'',
-        10:'',
+        0: '',
+        1: ['https://meet.google.com/fhb-dusx-coi', 'MECH OSCIL & WAVES'],
+        2: ['https://meet.google.com/edx-jgfu-hrf', 'MATHEMATICS-II'],
+        3: ['https://meet.google.com/ffk-fdkz-kpk', 'COMPUTER PROGRAMMING'],
+        4: ['https://meet.google.com/kcb-wzkz-kav', 'ELECTRICAL SCIENCES'],
+        5: '',
+        6: ['https://meet.google.com/noi-yaez-seb', 'WORKSHOP PRACTICE'],
+        7: '',
+        8: ['https://meet.google.com/xxm-pypr-pcq', 'THERMODYNAMICS'],
+        9: '',
+        10: ''
     },
-    // Saturday
     {
-        0:'',
-        1:'https://meet.google.com/pwy-azqp-whw',
-        2:'',
-        3:'',
-        4:'',
-        5:'',
-        6:'',
-        7:'',
-        8:'',
-        9:'',
-        10:'',
-    },
+        0: '',
+        1: ['https://meet.google.com/pwy-azqp-whw', 'BIOLOGICAL LABORATORY'],
+        2: '',
+        3: '',
+        4: '',
+        5: '',
+        6: '',
+        7: '',
+        8: '',
+        9: '',
+        10: ''
+    }
 ]
 
 function print(x)
@@ -131,17 +125,20 @@ function run()
     // Print Current Meet
     
     let found_current = false;
-    for(const [time, link] of Object.entries(links))
+    for(let [time, [link, name]] of Object.entries(links))
     {
+        // [link, name] = link;
         if(time == hour && link!="")
         {
-            ongoing_class.innerHTML = link.replace("https://", '');
+            ongoing_class.innerHTML = "<span>"+name+"</span><span>"+link.replace("https://", '')+"</span>";
+            // ongoing_class.innerHTML = link.replace("https://", '');
             ongoing_class.setAttribute("href", link);
             document.getElementsByClassName("footnote")[0].innerHTML = `Started ${minute==0?"just now":(minute+" minutes ago")}`;
             found_current = true;
             if(minute <= 15 && window.localStorage.getItem("OPENED") != link)
             {
-                window.location.replace(link);
+                print(name);
+                // window.location.replace(link);
                 window.localStorage.setItem("OPENED", link);
             }
             break;
@@ -149,7 +146,7 @@ function run()
     }
     if(!found_current)
     {
-        ongoing_class.innerHTML = faces[parseInt(Math.random()*faces.length)].replace("https://", '');
+        ongoing_class.innerHTML = faces[parseInt(Math.random()*faces.length)];
         ongoing_class.removeAttribute("href");
         document.getElementsByClassName("footnote")[0].innerHTML = '';
     }
@@ -157,18 +154,20 @@ function run()
     // Print NEXT Meet
     
     let found_next = false;
-    for(const [time, link] of Object.entries(links))
+    for(let [time, [link, name]] of Object.entries(links))
     {
         if(time > hour && link != "")
         {
-            next_class.innerHTML = link.replace("https://", '');
+            print(link);
+            next_class.innerHTML = "<span>"+name+"</span><span>"+link.replace("https://", '')+"</span>";
             next_class.setAttribute("href", link);
             document.getElementsByClassName("footnote")[1].innerHTML = `In ${time==hour+1?(60-minute)+" minutes":(time-hour)+" hours"}`;
             found_next = true;
             
             if(minute >= 58 && window.localStorage.getItem("OPENED") != link)
             {
-                window.location.replace(link);
+                print(name);
+                // window.location.replace(link);
                 window.localStorage.setItem("OPENED", link);
             }
             break;
@@ -176,7 +175,7 @@ function run()
     }
     if(!found_next)
     {
-        next_class.innerHTML = faces[parseInt(Math.random()*faces.length)].replace("https://", '');
+        next_class.innerHTML = faces[parseInt(Math.random()*faces.length)];
         next_class.removeAttribute("href");
         document.getElementsByClassName("footnote")[1].innerHTML = '';
     }
