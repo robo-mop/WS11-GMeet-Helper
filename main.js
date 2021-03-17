@@ -34,7 +34,7 @@ meets = [
         6: '',
         7: '',
         8: ['https://meet.google.com/znr-ursi-tyu', 'TECH REPORT WRITING'],
-        9: ['', 'COMPUTER PROGRAMMING'],
+        9: '',
         10: ''
     },
     {
@@ -48,7 +48,7 @@ meets = [
         7: '',
         8: ['https://meet.google.com/pnb-guub-irc', 'THERMODYNAMICS'],
         9: ['https://meet.google.com/mhb-aoxv-dor', 'ELECTRICAL SCIENCES'],
-        10: ''
+        10: ['https://meet.google.com/ary-xdvm-uoi', 'COMPUTER PROGRAMMING (LAB)']
     },
     {
         0: '',
